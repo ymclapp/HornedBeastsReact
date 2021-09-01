@@ -8,7 +8,16 @@ class HornedBeasts extends React.Component {
   
     // return whatever you want to render 
     console.log(this.props);
-      return <strong>{this.props.title} is shown here {this.props.imageURL} and is known for the saying {this.props.description}</strong>
+      return (
+        <div id = "hornedBeasts">
+        <strong>
+          {this.props.title}
+          {this.props.imageURL} {this.props.alt}
+         <p> {this.props.description} </p>
+          </strong>  
+        </div>
+      ) 
+     
     // return ( 
     //   <div id = "hornedBeasts">
     //     <h2>Horned Beasts</h2>
