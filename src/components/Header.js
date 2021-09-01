@@ -1,8 +1,11 @@
 import React from 'react'; 
+
 // class component 
 class Header extends React.Component { 
+
   // render *method* 
   render() { 
+   
     // return whatever you want to render 
     return ( 
       <header> 
@@ -11,4 +14,5 @@ class Header extends React.Component {
     ) 
   } 
 } 
+
 export default Header;
