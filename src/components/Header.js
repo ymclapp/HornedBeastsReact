@@ -1,4 +1,6 @@
-import React from 'react'; 
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
 // class component 
 class Header extends React.Component { 
@@ -8,9 +10,12 @@ class Header extends React.Component {
    
     // return whatever you want to render 
     return ( 
-      <header> 
-        <h1>If you are seeing this, then it worked!  This is my header!</h1> 
-      </header> 
+      <Container>
+        <Navbar bg = "dark" variant = "light">
+          <Navbar.Brand>Gallery of Horns!</Navbar.Brand>
+        </Navbar>
+      </Container>
+     
     ) 
   } 
 } 

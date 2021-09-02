@@ -1,8 +1,22 @@
 import React from 'react'; 
+import Card from 'react-bootstrap/Card';
 
 // class component 
 class HornedBeasts extends React.Component { 
- 
+  constructor (props) {
+    super (props);
+
+    this.state = {
+      favorites: 0;
+    };
+  }
+
+ handleCardClick = () => {
+   let currentFavorites = this. state.favorites;
+   this.setState({favorites: currentFavorites +1});
+ }
+
+
   // render *method* 
   render() { 
   

@@ -1,4 +1,7 @@
 import React from 'react'; 
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+
 // class component 
 class Footer extends React.Component { 
   // render *method* 
@@ -6,9 +9,12 @@ class Footer extends React.Component {
     // return whatever you want to render 
     return ( 
       <footer> 
-        <p>Author:  Yvette Clapp  This is my footer!</p> 
+        <Navbar>
+          <Navbar.Brand>Author:  Yvette Clapp &copy; {new Date()}.g</Navbar.Brand>
+        </Navbar>
       </footer> 
     ) 
   } 
-} 
+}
+ 
 export default Footer;
