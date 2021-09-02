@@ -30,15 +30,7 @@ import Main from './components/Main';
 import beastData from './data/data.json';
 import SelectedBeast from './components/SelectedBeast';
 
-//converted from function compnent to a class component by calling the function 'render' and putting it in a class that extends Component
-function App(){
-    <Header />
-    <Main />
-    <Footer />
-    <SelectedBeast />
-}
 
-//this is converting to a class component
 class App extends React.Component {
     constructor (props) {
         super(props)
@@ -145,16 +137,58 @@ export default Footer;
 >>>>>>Main.js<<<<<<
 
 import React from 'react';
-import { CardColumns } from 'react-bootstrap';
+import { CardColumns, Container, Form, Button } from 'react-bootstrap';
 import HornedBeasts './components/HornedBeasts';
 import data from './data/data.json';
 
 class Main extends React.Component {
+   constructor (props) {
+        super(props)
+
+        this.state = {
+            filteredBeasts: this.props.beasts,  <<-start with all beasts
+
+        };
+   } 
+   
+   handleSubmit = (event) => {
+       //prevent the page from reloading each time
+       event.preventDefault();
+       
+       let hornCount = parseInt(event.target.hornCount.value)
+        console.og(hornCount);
+            this.setState({
+                filteredBeasts:  this.props.beasts.filter(beast => {
+                    if (hornCount === 0) {
+                        return true;  <<--this will return all
+                    }
+                    return beast.horns===hornCount;
+                })
+            })
+        }
+   }
+   
     render() {
-        let beasts = this.props.beasts;
+        let beasts = this.state.filteredBeasts;
         console.log(beasts);
 
         return(
+            <Container as = "main">
+            <Form onSubmit = {this.handleSubmit}>
+                <Form.Group>
+                    <Form.Label>How many horns?</Form.Label>
+                    <Form.Control as  = "select" name = "hornCount">
+                        <option value = "0">All</option>
+                        <option value = "1">One</option>
+                        <option value = "2">Two</option>
+                        <option value = "3">Three</option>
+                    </Form.Control>
+                 </Form.Group>
+            <Form.Group>
+            <Button type = "submit">Filter</Button>
+            </Form.Group>
+            </Form>
+            </Form>
         <CardColumns>
         
         {beasts.map((beast,i) => (
@@ -169,6 +203,7 @@ class Main extends React.Component {
 
         ))}
         </CardColumns>
+        </Container>
         )
     }
 

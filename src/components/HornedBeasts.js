@@ -23,6 +23,7 @@ class HornedBeasts extends React.Component {
   // render *method* 
   render() { 
     return (
+      <>
         <Card>
           <Card.Body>
             <Card.Img variant = "top" src = {this.props.imageURL} onClick = {this.handleCardClick} />
@@ -31,12 +32,13 @@ class HornedBeasts extends React.Component {
             <Card.Text>{this.props.description}</Card.Text>
           </Card.Body>
         </Card>
-        <strong>
-          {this.props.title}
-          {this.props.imageURL} {this.props.alt}
-         <p> {this.props.description} </p>
-          </strong>  
-        </div>
+        </>
+        // <strong>
+        //   {this.props.title}
+        //   {this.props.imageURL} {this.props.alt}
+        //  <p> {this.props.description} </p>
+        //   </strong>  
+        // </div>
       ) 
      
     // return ( 
