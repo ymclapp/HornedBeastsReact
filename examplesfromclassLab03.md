@@ -208,7 +208,7 @@ class HornedBeast extends React.Component {
             <Card.Body> 
                 <Card.Img variant = "top" src = {this.props.imageURL} onClick = {this.handlCardClick}/>
                 <Card.Title>{this.props.title}</Card.Title>
-                <Cart.Text>❤️ ={this.state.favorites</Card.Text>}  <<--Googled heart emoji and there was a copy to use and paste here
+                <Cart.Text>❤️ ={this.state.favorites}</Card.Text>  <<--Googled heart emoji and there was a copy to use and paste here
                 <Card.Text>{this.props.description}</Card.Title> 
             </Card.Body>
             </Card>

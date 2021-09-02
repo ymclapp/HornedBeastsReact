@@ -12,18 +12,25 @@ class HornedBeasts extends React.Component {
   }
 
  handleCardClick = () => {
-   let currentFavorites = this. state.favorites;
+   let currentFavorites = this.state.favorites;
    this.setState({favorites: currentFavorites +1});
  }
 
+ showModal = () = > {
+   this.props.displayModalForIndex(this.props.beastIndex);
+ }
 
   // render *method* 
   render() { 
-  
-    // return whatever you want to render 
-    console.log(this.props);
-      return (
-        <div id = "hornedBeasts">
+    return (
+        <Card>
+          <Card.Body>
+            <Card.Img variant = "top" src = {this.props.imageURL} onClick = {this.handleCardClick} />
+            <Card.Title>{this.props.title}</Card.Title>
+            <Card.Text>❤️ ={this.state.favorites}</Card.Text>
+            <Card.Text>{this.props.description}</Card.Text>
+          </Card.Body>
+        </Card>
         <strong>
           {this.props.title}
           {this.props.imageURL} {this.props.alt}
