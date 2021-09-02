@@ -9,7 +9,7 @@ class Footer extends React.Component {
     return ( 
       <footer> 
         <Navbar>
-          <Navbar.Brand>Author:  Yvette Clapp &copy; {new Date()}.g</Navbar.Brand>
+          <Navbar.Brand>Author:  Yvette Clapp &copy; {new Date().getFullYear()}</Navbar.Brand>
         </Navbar>
       </footer> 
     ) 
