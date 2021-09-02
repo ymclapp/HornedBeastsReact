@@ -1,25 +1,32 @@
 import React from 'react'; 
+import { CardColumns } from 'react-bootstrap';
 import HornedBeasts from './HornedBeasts';
-import longhorned from './longhorned.jpg';
-import triceratops from './triceratops.jpg';
+// import beastData from '../data/data.json';
+
 
 // class component 
+class Main extends React.Component { 
+  
+    render() { 
+      let beasts = this.props.beasts;
+      console.log(beasts);
 
-export default class Main extends React.Component { 
-  // render *method* 
-  render() { 
-          // return whatever you want to render 
-    return ( 
-      <div>
-     <HornedBeasts 
-     title = "Two Horn" 
-     imageURL = {longhorned} alt = "Long Horned"
-     description = "This is a two horned beast.  Beware!" />
-     <HornedBeasts 
-     title = "Three Horn" 
-     imageURL = {triceratops} alt = "Triceratops" 
-     description = "This is a three horned beast.  Hear me roar" />
-     </div>
+      return ( 
+      <CardColumns>
+        {beasts.map ((beast, i) => (
+          <HornedBeasts
+          key = {i}
+          beastIndex = {i}
+          displayModalForIndex = {this.props.handleSelectBeast}
+          title = {beast.title}
+          imageURL = {beast.image_url}
+          description = {beast.description}
+          />
+
+      ))}
+     </CardColumns>
     ) 
   } 
 } 
+
+export default Main;
