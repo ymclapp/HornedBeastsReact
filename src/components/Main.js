@@ -1,7 +1,7 @@
 import React from 'react'; 
 import { CardColumns } from 'react-bootstrap';
 import HornedBeasts from './HornedBeasts';
-import data from '../data/data.json';
+// import beastData from '../data/data.json';
 
 
 // class component 

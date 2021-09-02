@@ -7,7 +7,7 @@ class HornedBeasts extends React.Component {
     super (props);
 
     this.state = {
-      favorites: 0;
+      favorites: 0,
     };
   }
 
@@ -16,7 +16,7 @@ class HornedBeasts extends React.Component {
    this.setState({favorites: currentFavorites +1});
  }
 
- showModal = () = > {
+ showModal = () => {
    this.props.displayModalForIndex(this.props.beastIndex);
  }
 
@@ -33,23 +33,9 @@ class HornedBeasts extends React.Component {
           </Card.Body>
         </Card>
         </>
-        // <strong>
-        //   {this.props.title}
-        //   {this.props.imageURL} {this.props.alt}
-        //  <p> {this.props.description} </p>
-        //   </strong>  
-        // </div>
+       
       ) 
-     
-    // return ( 
-    //   <div id = "hornedBeasts">
-    //     <h2>Horned Beasts</h2>
-    //     <div>
-        
-    //     </div>
-
-    //   </div> 
-    // ) 
+      
   } 
 } 
 
