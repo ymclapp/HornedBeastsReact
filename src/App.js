@@ -7,18 +7,6 @@ import Footer from './components/Footer';
 import beastData from './data/data.json';
 
 
-//converted from function compnent to a class component by calling the function 'render' and putting it in a class that extends Component
-// function App() {
-//   return (
-//     <div className="App">
-//       <Header />
-//       <Main />
-//       <HornedBeasts />
-//       <Footer />
-
-//     </div>
-//   );
-// }
 
 class App extends React.Component {
   constructor (props) {
@@ -50,7 +38,7 @@ class App extends React.Component {
         <Header theme = {theme} />
         <Main 
           beasts = {beastData}
-          handleSelectBeast ={this.props.handleSelectBeast}
+          handleSelectBeast = {this.handleSelectBeast}
         />
         <Footer theme = {theme} />
         <SelectedBeast
