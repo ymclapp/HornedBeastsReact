@@ -81,6 +81,12 @@ class SelectedBeast extends React.Component {
     render() {
         const beast = this.props.beast;
         console.log(beast)
+
+        if (!beast) {
+            return null;
+        }
+
+        
         return(
             <Modal show = {this.props.show}
             onHide = {this.props.handleClose}>
@@ -146,7 +152,7 @@ class Main extends React.Component {
         super(props)
 
         this.state = {
-            filteredBeasts: this.props.beasts,  <<-start with all beasts
+            filteredBeasts: [],  <<-start with no beasts
 
         };
    } 
@@ -157,6 +163,20 @@ class Main extends React.Component {
        
        let hornCount = parseInt(event.target.hornCount.value)
         console.og(hornCount);
+
+        this.filterBeasts(hornCount);
+   }
+
+   handleChange = event => {
+       let hornCount = parseInt(event.target.value);
+       console.log(hornCount);
+
+       this.filterBeasts(hornCount);
+   }
+        filterBeasts = (hornCount) => {
+            //start with our full list from props
+            let filterBeasts = this.props.beasts;
+        }
             this.setState({
                 filteredBeasts:  this.props.beasts.filter(beast => {
                     if (hornCount === 0) {
