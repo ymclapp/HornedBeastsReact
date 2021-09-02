@@ -11,7 +11,7 @@ class Header extends React.Component {
     // return whatever you want to render 
     return ( 
       <Container>
-        <Navbar bg = "dark" variant = "light">
+        <Navbar bg = "primary" variant = "light">
           <Navbar.Brand>Gallery of Horns!</Navbar.Brand>
         </Navbar>
       </Container>

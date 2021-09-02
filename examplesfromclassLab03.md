@@ -68,9 +68,9 @@ render () {
         <Header theme = {theme} />
         <Main 
             beasts = {beastData}
-            handleSelectBeast = {this.props.handleSelectBest
+            handleSelectBeast = {this.props.handleSelectBeast}
          />
-        <Footer theme = {theme />
+        <Footer theme = {theme} />
         <SelectedBeast
             beast = {this.state.selectedBeast}
             show = {this.state.showModal}
@@ -183,7 +183,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 
 
-class HornedBeast extends React.Component {
+class HornedBeasts extends React.Component {
     constructor(props) {
         super(props);
 

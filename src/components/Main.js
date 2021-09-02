@@ -13,6 +13,7 @@ class Main extends React.Component {
 
       return ( 
       <CardColumns>
+        
         {beasts.map ((beast, i) => (
           <HornedBeasts
           key = {i}
