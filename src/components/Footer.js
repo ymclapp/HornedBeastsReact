@@ -8,7 +8,7 @@ class Footer extends React.Component {
     // return whatever you want to render 
     return ( 
       <footer> 
-        <Navbar>
+        <Navbar bg = "primary" variant = {this.props.theme}>
           <Navbar.Brand>Author:  Yvette Clapp &copy; {new Date().getFullYear()}</Navbar.Brand>
         </Navbar>
       </footer> 

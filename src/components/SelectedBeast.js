@@ -15,7 +15,7 @@ class SelectedBeast extends React.Component {
                     </Modal.Header>
                     <Modal.Body>
                         <Card
-                        bg = "dark"
+                        bg = "primary"
                         text = "light"
                         onClick = {this.displayAsModal}
                         >
@@ -28,6 +28,7 @@ class SelectedBeast extends React.Component {
                             </Card.Body>
                         </Card>
                     </Modal.Body>
+                    
                     <Modal.Footer>
                         <Button onClick = {this.props.handleClose} variant = "secondary">Close</Button>
                     </Modal.Footer>

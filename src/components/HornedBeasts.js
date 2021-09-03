@@ -24,7 +24,9 @@ class HornedBeasts extends React.Component {
   render() { 
     return (
   
-        <Card>
+        <Card
+        onClick = {this.handleCardClick}
+        >
           <Card.Body>
             <Card.Img variant = "top" src = {this.props.imageURL} onClick = {this.showModal} />
             <Card.Title>{this.props.title}</Card.Title>
