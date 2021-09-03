@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { CardColumns } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import HornedBeasts from './HornedBeasts';
 // import beastData from '../data/data.json';
 
@@ -11,10 +11,12 @@ class Main extends React.Component {
       let beasts = this.props.beasts;
       console.log(beasts);
 
+      //need to figure out issue here with row and container - watch video
       return ( 
-      <CardColumns>
-        
+      <Container>
+        <Row>
         {beasts.map ((beast, i) => (
+          <Col>
           <HornedBeasts
           key = {i}
           beastIndex = {i}
@@ -23,9 +25,11 @@ class Main extends React.Component {
           imageURL = {beast.image_url}
           description = {beast.description}
           />
+          </Col>
 
       ))}
-     </CardColumns>
+          </Row>
+        </Container>
     ) 
   } 
 } 
