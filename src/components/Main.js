@@ -47,6 +47,7 @@ class Main extends React.Component {
       let beasts = this.state.filteredBeasts;
       console.log(beasts);
 
+      //need to figure out issue here with row and container - watch video
       return ( 
         <Container as = "main">
           <Form onSubmit = {this.handleSubmit}>
