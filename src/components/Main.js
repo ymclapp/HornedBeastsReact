@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Button,CardColumns, Container, Form } from 'react-bootstrap';
+import { Button,Col, Row, Container, Form } from 'react-bootstrap';
 import HornedBeasts from './HornedBeasts';
 // import beastData from '../data/data.json';
 
@@ -62,9 +62,10 @@ class Main extends React.Component {
             <Form.Group>
               <Button type = "submit">Filter</Button>
             </Form.Group>
-          </Form>
-          <CardColumns>        
+          </Form>  
+            <Row>  
             {beasts.map ((beast, i) => (
+              <Col>
               <HornedBeasts
                 key = {i}
                 beastIndex = {i}
@@ -73,8 +74,9 @@ class Main extends React.Component {
                 imageURL = {beast.image_url}
                 description = {beast.description}
           />
+          </Col>
       ))}
-          </CardColumns>
+          </Row>
      </Container>
     ) 
   } 
