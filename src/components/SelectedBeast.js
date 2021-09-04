@@ -8,14 +8,14 @@ class SelectedBeast extends React.Component {
 
         return (
             <Modal show = {this.props.show}
-            onHide = {this.props.handleClose}>
+                onHide = {this.props.handleClose}>
                 <Modal.Dialog>
                     <Modal.Header closeButton>
                         <Modal.Title>{beast.title}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Card
-                        bg = "dark"
+                        bg = "primary"
                         text = "light"
                         onClick = {this.displayAsModal}
                         >
@@ -28,6 +28,7 @@ class SelectedBeast extends React.Component {
                             </Card.Body>
                         </Card>
                     </Modal.Body>
+                    
                     <Modal.Footer>
                         <Button onClick = {this.props.handleClose} variant = "secondary">Close</Button>
                     </Modal.Footer>

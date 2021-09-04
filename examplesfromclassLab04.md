@@ -144,7 +144,7 @@ export default Footer;
 
 import React from 'react';
 import { CardColumns, Container, Form, Button } from 'react-bootstrap';
-import HornedBeasts './components/HornedBeasts';
+import HornedBeasts './HornedBeasts';
 import data from './data/data.json';
 
 class Main extends React.Component {

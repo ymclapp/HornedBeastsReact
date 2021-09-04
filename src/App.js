@@ -19,6 +19,7 @@ class App extends React.Component {
   }
 
   handleClose = () => {
+    console.log('Hiding modal');
     this.setState({ showModal: false });
   }
 
@@ -29,6 +30,8 @@ class App extends React.Component {
     });
     
   }
+
+
 
   render () {
     let theme = 'dark';
