@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card';
 class HornedBeasts extends React.Component { 
   constructor (props) {
     super (props);
-
     this.state = {
       favorites: 0,
     };
@@ -14,10 +13,11 @@ class HornedBeasts extends React.Component {
  handleCardClick = () => {
    let currentFavorites = this.state.favorites;
    this.setState({favorites: currentFavorites +1});
+
  }
 
  showModal = () => {
-   this.props.displayModalForIndex(this.props.beastIndex);
+   this.props.displayModalForIndex(this.props.title);
  }
 
   // render *method* 
@@ -28,7 +28,7 @@ class HornedBeasts extends React.Component {
         onClick = {this.handleCardClick}
         >
           <Card.Body>
-            <Card.Img variant = "top" src = {this.props.imageURL} onClick = {this.showModal} />
+            <Card.Img variant = "top" src = {this.props.imageURL} onClick={this.showModal} />
             <Card.Title>{this.props.title}</Card.Title>
             <Card.Text>❤️ ={this.state.favorites}</Card.Text>
             <Card.Text>{this.props.description}</Card.Text>

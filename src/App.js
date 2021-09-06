@@ -25,11 +25,13 @@ class App extends React.Component {
     this.setState({ showModal: false });
   }
 
-  handleSelectBeast = beastIndex => {
-    this.setState({
-      selectedBeast: this.state.beastData[beastIndex],
-      showModal: true,
-    });
+  handleSelectBeast = name => {
+    const selectedBeast = rawData.find(beast => beast.title === name);
+    this.setState({selectedBeast, showModal: true});
+    // this.setState({
+    //   selectedBeast: this.state.beastData[beastIndex],
+    //   showModal: true,
+    // });
     
   }
 
@@ -39,20 +41,20 @@ class App extends React.Component {
     let theme = 'dark';
 
     return (
-      <div className = "App">
-        <Header theme = {theme} />
+      <div className="App">
+        <Header theme={theme} />
        
         <Main 
           beasts={this.state.beastData}
-          handleSelectBeast = {this.handleSelectBeast}
+          handleSelectBeast={this.handleSelectBeast}
         />
        
-        <Footer theme = {theme} />
+        <Footer theme={theme} />
        
         <SelectedBeast
-          beast = {this.state.selectedBeast}
-          show = {this.state.showModal}
-          handleClose = {this.handleClose}
+          beast={this.state.selectedBeast}
+          show={this.state.showModal}
+          handleClose={this.handleClose}
           />
       </div>
     );

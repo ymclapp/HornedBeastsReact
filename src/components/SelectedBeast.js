@@ -7,8 +7,8 @@ class SelectedBeast extends React.Component {
         console.log('beast inside selected beast',beast);
 
         return (
-            <Modal show = {this.props.show}
-                onHide = {this.props.handleClose}>
+            <Modal show={this.props.show}
+                onHide={this.props.handleClose}>
                 <Modal.Dialog>
                     <Modal.Header closeButton>
                         <Modal.Title>{beast.title}</Modal.Title>
@@ -17,7 +17,9 @@ class SelectedBeast extends React.Component {
                         <Card
                         bg = "primary"
                         text = "light"
-                        onClick = {this.displayAsModal}
+                        //you have no displayAsModal 
+                        // onClick = {this.displayAsModal}
+                        // onClick={this.handleSelectBeast}
                         >
                             <Card.Img variant = "top" alt = "" src = {beast.image_url} />
                             <Card.Body>

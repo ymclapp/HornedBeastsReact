@@ -50,7 +50,7 @@ class Main extends React.Component {
       //need to figure out issue here with row and container - watch video
       return ( 
         <Container as = "main">
-          <Form onSubmit = {this.handleSubmit}>
+          <Form onSubmit={this.handleSubmit}>
             <Form.Group>
               <Form.Label>How many horns?</Form.Label>
               <Form.Control as="select" name="hornCount" onChange={this.handleChange}>
