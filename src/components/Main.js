@@ -25,16 +25,16 @@ class Main extends React.Component {
 
   handleChange = event => {
     let hornCount = parseInt(event.target.value);
-    console.log(hornCount);
+    console.log('this is the horn count ',hornCount);
 
     this.filterBeasts(hornCount);
   }
 
   filterBeasts = (hornCount) => {
     let filteredBeasts = this.props.beasts;
-
+    console.log('this props beasts ', this.props.beasts);
     if (hornCount > 0) {
-      filteredBeasts = filteredBeasts.filter(beast => beast.horns===hornCount);
+      filteredBeasts = filteredBeasts.filter(beast => beast.horns === hornCount);
     }
 
     this.setState({
@@ -45,7 +45,7 @@ class Main extends React.Component {
   
     render() { 
       let beasts = this.state.filteredBeasts;
-      console.log(beasts);
+      console.log('beasts inside the main. ', beasts);
 
       //need to figure out issue here with row and container - watch video
       return ( 
@@ -53,7 +53,7 @@ class Main extends React.Component {
           <Form onSubmit = {this.handleSubmit}>
             <Form.Group>
               <Form.Label>How many horns?</Form.Label>
-              <Form.Control as = "select" name = "hornCount" onChange = {this.handleChange}>
+              <Form.Control as="select" name="hornCount" onChange={this.handleChange}>
                 <option value = "0">All</option>
                 <option value = "1">One</option>
                 <option value = "2">Two</option>
@@ -68,12 +68,12 @@ class Main extends React.Component {
             {beasts.map ((beast, i) => (
               <Col>
               <HornedBeasts
-                key = {i}
-                beastIndex = {i}
-                displayModalForIndex = {this.props.handleSelectBeast}
-                title = {beast.title}
-                imageURL = {beast.image_url}
-                description = {beast.description}
+                key={i}
+                beastIndex={i}
+                displayModalForIndex={this.props.handleSelectBeast}
+                title={beast.title}
+                imageURL={beast.image_url}
+                description={beast.description}
           />
           </Col>
       ))}

@@ -4,7 +4,7 @@ import { Button, Card, Modal } from 'react-bootstrap';
 class SelectedBeast extends React.Component {
     render() {
         const beast = this.props.beast;
-        console.log(beast)
+        console.log('beast inside selected beast',beast);
 
         return (
             <Modal show = {this.props.show}
